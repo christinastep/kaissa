@@ -1,0 +1,171 @@
+.page--bw{
+  height:100vh;
+  .page--bw__intro{
+    height:60vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    @media (min-width: 750px)  { 
+      padding-left: 100px;
+    }
+    
+    p{
+      font-size: 50px;
+      //border: 1.2px solid #000000;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding-right:100px;
+      position: relative;
+    }
+  }
+  .page--bw__content{
+    height:40vh;
+    background-color: #000;
+    color:#fff;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    @media (min-width: 750px)  { 
+      padding-left: 100px;
+    }
+    .contnetBox{
+      @media (min-width: 750px)  { 
+        display: flex;
+        align-items: flex-start;
+      }
+    }
+    h2{
+      font-size: 50px;
+      font-weight: bold;
+      @media (max-width: 749px)  {
+        margin-bottom: 10px;
+        font-size: 30px;
+      }
+    }
+    ul{
+      columns: 2;
+      
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 2em;
+      @media (min-width: 750px)  { 
+        font-size: 20px;
+        padding-left: 50px;
+      }
+    }
+  }
+}
+
+.textSlide{
+  position: relative;
+  .textSlideBox{
+    
+    @media (min-width: 750px)  { 
+      position: relative;
+      left:230px;
+      top:-40px;
+    }
+    //margin-top: -100px;
+  }
+}
+
+
+.textSlideBox {
+  display: inline-block;
+  height: 1.7em;
+  overflow: hidden;
+
+  .textSlideBox__words {
+    animation-name: wordSlider;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+    animation-duration: 7s;
+  }
+  
+  .textSlideBox__word {
+    display: block;
+    line-height: 30px;
+    text-align: left;
+    font-size: 30px;
+  }
+}
+
+@keyframes wordSlider {
+  $steps: -0%, -25%, -50%, -75%;
+  
+  @for $index from 0 to length($steps)-1 {
+    $next: $index+1;
+    $step: floor(100/(length($steps)-1));
+    $animation_step: floor($step*.2);
+  
+    #{$step*$index}%,
+    #{($step*$next) - $animation_step}% {
+      transform: translateY(nth($steps, $index+1));
+    }
+  }
+  100% {
+    transform: translateY(nth($steps, length($steps)));
+  }
+}
+
+
+.page--bw__intro__headline{
+  text-align: center;
+  width:100%;
+  padding-right: 100px;
+}
+
+.projtesbw{
+  .contnetBox{
+    width: 100%;
+    padding-right: 100px;
+    justify-content: center;
+    display: flex;
+    p{
+      padding:20px;
+      font-size: 14px;
+      line-height: 2em;
+      color: #fff;
+      position: relative;
+      @media (min-width: 750px)  { 
+        font-size: 20px;
+        padding-left: 50px;
+      }
+      a{
+        color: #ffffff;
+      }
+    }
+    &:after{
+      color: red;
+      content:"huhu";
+      display: block; 
+      position: absolute;
+      top:0px;
+      left: 0;
+    }
+    &:nth-child(0n+4){
+      &:after{
+        content: "04";
+      }
+    }
+    &:nth-child(0n+1){
+      &:after{
+        content: "01";
+      }
+    }
+    &:nth-child(0n+2){
+      &:after{
+        content: "02";
+      }
+    }
+    &:nth-child(0n+3){
+      &:after{
+        content: "03";
+      }
+    }
+  }
+}
+
+
+

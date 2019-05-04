@@ -1,10 +1,26 @@
-html,
+@font-face {
+  font-family: "Gilory";
+  src: url("/font/gilroy-extrabold-webfont.woff2") format("woff2"),
+         url("/font/gilroy-extrabold-webfont.woff") format("woff");
+  font-weight: bold;
+ }
+
+ @font-face {
+  font-family: "Gilory";
+  src: url("/font/gilroy-light-webfont.woff2") format("woff2"),
+         url("/font/gilroy-light-webfont.woff") format("woff");
+
+ }
+
+
+ html,
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   background-color: white;
   overflow-x: hidden;
+  font-family: 'Gilory', sans-serif;
 }
 
 body{

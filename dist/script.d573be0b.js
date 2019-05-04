@@ -122,22 +122,70 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 //   }
 // }, 1000);
 window.addEventListener('load', function () {
-  window.onscroll = function () {
-    if (document.documentElement.scrollTop > window.innerHeight * 0.9) {
-      document.querySelector('.stes__number--position').innerHTML = "02";
+  if (document.querySelector('body').classList.contains("hp")) {
+    window.onscroll = function () {
+      if (document.documentElement.scrollTop > window.innerHeight * 0.9) {
+        document.querySelector('.stes__number--position').innerHTML = "02";
 
-      if (document.documentElement.scrollTop > window.innerHeight * 1.9) {
-        document.querySelector('.stes__number--position').innerHTML = "03";
+        if (document.documentElement.scrollTop > window.innerHeight * 1.9) {
+          document.querySelector('.stes__number--position').innerHTML = "03";
 
-        if (document.documentElement.scrollTop > window.innerHeight * 2.9) {
-          document.querySelector('.stes__number--position').innerHTML = "04";
+          if (document.documentElement.scrollTop > window.innerHeight * 2.9) {
+            document.querySelector('.stes__number--position').innerHTML = "04";
+          }
         }
+      } else {
+        document.querySelector('.stes__number--position').innerHTML = "01";
       }
-    } else {
-      document.querySelector('.stes__number--position').innerHTML = "01";
+    };
+  }
+
+  function scaleNumbre() {
+    if (document.querySelector('.stes__number--position').classList.contains("active")) {
+      document.querySelector('.stes__number--position').classList.remove("active");
+      console.log("remove active");
     }
-  };
-});
+
+    document.querySelector('.stes__number--position').classList.add("active");
+  }
+
+  if (document.querySelector('body').classList.contains("project")) {
+    var nextSlide = function nextSlide() {
+      goToSlide(currentSlide + 1);
+    };
+
+    var prevSlide = function prevSlide() {
+      goToSlide(currentSlide - 1);
+    };
+
+    var goToSlide = function goToSlide(n) {
+      slides[currentSlide].className = 'slider__item';
+      currentSlide = (n + slides.length) % slides.length;
+      slides[currentSlide].className = 'slider__item slider__item--current';
+      var elementHeight = document.querySelector('.slider__item--current').clientHeight;
+      var windowtHeight = window.innerHeight;
+      var topSlider = windowtHeight * 0.5 - elementHeight * 0.5;
+      document.querySelector(".slider__item--current").style.marginTop = topSlider + "px";
+    };
+
+    var slides = document.querySelectorAll(".slider > .slider__item");
+    var currentSlide = 0;
+    var elementHeight = document.querySelector('.slider__item--current').clientHeight;
+    var windowtHeight = window.innerHeight;
+    var topSlider = windowtHeight * 0.5 - elementHeight * 0.5;
+    document.querySelector(".slider__item--current").style.marginTop = topSlider + "px";
+    var prev = document.querySelector('.controls__btn--prev'),
+        next = document.querySelector('.controls__btn--next');
+
+    next.onclick = function () {
+      nextSlide();
+    };
+
+    prev.onclick = function () {
+      prevSlide();
+    };
+  }
+}); //slider
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -165,7 +213,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51877" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59680" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

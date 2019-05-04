@@ -176,7 +176,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"/Users/hetic/Desktop/kaissa/src/font/gilroy-extrabold-webfont.woff2":[["gilroy-extrabold-webfont.470a4e17.woff2","font/gilroy-extrabold-webfont.woff2"],"font/gilroy-extrabold-webfont.woff2"],"/Users/hetic/Desktop/kaissa/src/font/gilroy-extrabold-webfont.woff":[["gilroy-extrabold-webfont.80570983.woff","font/gilroy-extrabold-webfont.woff"],"font/gilroy-extrabold-webfont.woff"],"/Users/hetic/Desktop/kaissa/src/font/gilroy-light-webfont.woff2":[["gilroy-light-webfont.00fcebf5.woff2","font/gilroy-light-webfont.woff2"],"font/gilroy-light-webfont.woff2"],"/Users/hetic/Desktop/kaissa/src/font/gilroy-light-webfont.woff":[["gilroy-light-webfont.e4aa1a71.woff","font/gilroy-light-webfont.woff"],"font/gilroy-light-webfont.woff"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -203,7 +203,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51877" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59680" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

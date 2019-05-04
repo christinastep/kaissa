@@ -6,6 +6,7 @@
   flex-direction: column;
   align-items: center;
   position: fixed;
+  
 
   .steps__scala{
     height:100px;
@@ -15,9 +16,21 @@
   }
   .stes__number{
     margin: 10px;
+    font-weight: bold;
   }
   .stes__number--positionMax{
     
+  }
+  .stes__number--position{
+    transition:all 0.5s;
+    font-size: auto;
+    &.active{
+      animation: scaleNumber 0.5s alternate;
+      @keyframes scaleNumber {
+        0%{font-size:16px}
+        100%{font-size:20px};
+      }
+    }
   }
 }
 
@@ -26,14 +39,24 @@
 .teaser{
   margin-right: 3vw;
   margin-left: 20vw;
-  display: flex;
+  
   width:77vw;
   max-width: 1100px;
-  justify-content: space-between;
-  margin-bottom: 70px;
+  @media (min-width: 750px)  {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 70px;
+  }
+  margin-bottom: 30px;
 
   .teaser__textbox{
-    width:28%;
+    @media (min-width: 750px)  { 
+      margin-top: 90px;
+    }
+    
+    @media (min-width: 750px)  {
+      width:28%;
+    }
     .teaser__headline,
     .teaser__subheadline{
       text-align: right;
@@ -49,15 +72,25 @@
       font-weight: bold;
       font-size: 19px;
       margin-top: 10px;
+      @media (max-width: 749px)  { 
+        margin-bottom: 30px;
+      }
     }
     .teaser__text{
       margin-top: 70px;
       width:80%;
+      @media (max-width: 749px)  { 
+        margin-top: 145px;
+        width: 80%;
+        position: absolute;
+      }
     }
   }
 
   .teaser__imagebox{
-    width:70%;
+    @media (min-width: 750px)  {
+      width:70%;
+    }
     img{
       width: 100%;
     }
@@ -71,11 +104,31 @@
     border-radius: 50%;
     text-align: center;
     line-height: 88px;
-    font-size: 12px;
+    font-size: 14px;
     color: #F4B400;
-    position: relative;
-    left:-130px;
+    font-weight: bold;
+    transition: all .5s;
+    &:hover{
+      background-color: #F4B400;
+      color: #fff;
+    }
+   
+    @media (min-width: 750px)  { 
+      position: relative;
+      left:-130px;
+    }
+    @media (max-width: 749px)  { 
+      margin-top: 70px;
+    }
+  }
 
+  .image__link{
+    &:hover{
+      &+.teaser__link{
+        background-color: #F4B400;
+        color: #fff;
+      }
+    }
   }
 }
 
