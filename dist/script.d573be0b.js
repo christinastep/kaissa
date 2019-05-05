@@ -105,22 +105,6 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   // Override the current require with this new one
   return newRequire;
 })({"js/script.js":[function(require,module,exports) {
-// window.setInterval(function(){
-//   console.log("test");
-//   console.log(document.documentElement.scrollTop);
-//   if(document.documentElement.scrollTop = window.innerHeight*1){
-//     document.querySelector('.stes__number--position').innerHTML = "02";
-//     console.log("test5");
-//     if(document.documentElement.scrollTop = window.innerHeight*2){
-//       document.querySelector('.stes__number--position').innerHTML = "03";
-//       console.log("test5");
-//       if(document.documentElement.scrollTop = window.innerHeight*3){
-//         document.querySelector('.stes__number--position').innerHTML = "04";
-//         console.log("test5")
-//       }
-//     }
-//   }
-// }, 1000);
 window.addEventListener('load', function () {
   if (document.querySelector('body').classList.contains("hp")) {
     window.onscroll = function () {
@@ -183,6 +167,25 @@ window.addEventListener('load', function () {
 
     prev.onclick = function () {
       prevSlide();
+    }; //scroll
+
+
+    window.onscroll = function () {
+      if (document.documentElement.scrollTop > window.innerHeight * 0.0) {
+        document.querySelector('section:first-of-type').style.position = "fixed";
+        document.querySelector('.project__description').style.position = "absolute";
+        document.querySelector('.project__description').style.marginTop = "100vh";
+
+        if (document.documentElement.scrollTop > window.innerHeight * 1.0) {
+          document.querySelector('.project__description').style.position = "fixed";
+          document.querySelector('.project__description').style.marginTop = "0vh";
+          document.querySelector('section:last-of-type').style.position = "absolute";
+
+          if (document.documentElement.scrollTop > window.innerHeight * 2.0) {
+            document.querySelector('section:last-of-type').style.position = "fixed";
+          }
+        }
+      }
     };
   }
 }); //slider
@@ -213,7 +216,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59680" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62604" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);

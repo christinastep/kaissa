@@ -122,14 +122,18 @@
     padding-right: 100px;
     justify-content: center;
     display: flex;
+    @media (max-width: 749px)  { 
+      flex-direction: column;
+    }
     p{
-      padding:20px;
+      padding:5px;
       font-size: 14px;
       line-height: 2em;
       color: #fff;
       position: relative;
       @media (min-width: 750px)  { 
         font-size: 20px;
+        padding:20px;
         padding-left: 50px;
       }
       a{
@@ -137,7 +141,7 @@
       }
     }
     &:after{
-      color: red;
+      //color: red;
       content:"huhu";
       display: block; 
       position: absolute;
