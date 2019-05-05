@@ -112,6 +112,15 @@ body {
   border-radius: 2vw;
   width: 2px;
   background-color: #efefef;
+  position: relative;
+}
+.teaser__steps .steps__scala .steps__scala--position {
+  transition: all 0.3s;
+  position: absolute;
+  background-color: #F4B400;
+  bottom: 0;
+  height: 25%;
+  width: 100%;
 }
 .teaser__steps .stes__number {
   margin: 10px;

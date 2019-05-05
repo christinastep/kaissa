@@ -13,13 +13,22 @@
     border-radius: 2vw;
     width:2px;
     background-color: #efefef;
+    position: relative;
+    .steps__scala--position{
+      transition: all 0.3s;
+      position: absolute;
+      background-color: #F4B400;
+      bottom: 0;
+      height:25%;
+      width:100%;
+    }
+
   }
   .stes__number{
     margin: 10px;
     font-weight: bold;
   }
   .stes__number--positionMax{
-    
   }
   .stes__number--position{
     transition:all 0.5s;

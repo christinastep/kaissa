@@ -110,16 +110,20 @@ window.addEventListener('load', function () {
     window.onscroll = function () {
       if (document.documentElement.scrollTop > window.innerHeight * 0.9) {
         document.querySelector('.stes__number--position').innerHTML = "02";
+        document.querySelector('.steps__scala--position').style.height = "50%";
 
         if (document.documentElement.scrollTop > window.innerHeight * 1.9) {
           document.querySelector('.stes__number--position').innerHTML = "03";
+          document.querySelector('.steps__scala--position').style.height = "75%";
 
           if (document.documentElement.scrollTop > window.innerHeight * 2.9) {
             document.querySelector('.stes__number--position').innerHTML = "04";
+            document.querySelector('.steps__scala--position').style.height = "100%";
           }
         }
       } else {
         document.querySelector('.stes__number--position').innerHTML = "01";
+        document.querySelector('.steps__scala--position').style.height = "25%";
       }
     };
   }
@@ -216,7 +220,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62604" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53634" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
